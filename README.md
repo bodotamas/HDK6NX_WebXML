@@ -1,5 +1,5 @@
 # 📚 XML – Webes adatkezelő környezetek  
-*Miskolci Egyetem – Informatikai Kar*
+*Miskolci Egyetem*
 
 ---
 
