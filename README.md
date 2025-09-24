@@ -24,7 +24,13 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
         📄 xml.html
         📄 xml.png
     📁 HDK6NX_0917
-        📄
+        📄 HDK6NX_konferencia
+        📄 HDK6NX_mozi.xml
+        📄 HDK6NX_mozi_ext.xml
+        📄 HDK6NX_orarend.xml
+        📄 HDK6NX_orarendER.png
+        📄 HDK6NX_orarendXML.png
+        📄 HDK6NX_orarendhtml.html
 ---
 
 ## 🎯 Célkitűzések
