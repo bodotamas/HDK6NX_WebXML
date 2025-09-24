@@ -14,6 +14,7 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
 ## 📂 Repository felépítése
 
 📦 HDK6NX_WebXML
+
 ┣ 📁 HDK6NX_0910
 ┃ ┣ 📄 feladat1.xml
 ┃ ┣ 📄 feladat1.xsd
