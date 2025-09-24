@@ -1,0 +1,7 @@
+<!ELEMENT BT_adatbazis (DOLGOZO)*>
+    <!ELEMENT DOLGOZO (nev, fizetes)>
+        <!ATTLIST DOLGOZO 
+            kod ID #REQUIRED>
+            
+        <!ELEMENT nev (#PCDATA)>
+        <!ELEMENT fizetes (#PCDATA)>

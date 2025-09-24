@@ -1,0 +1,17 @@
+<!DOCTYPE BT_kurzusfelvetel SYSTEM "BT_adatbazis.dtd">
+
+<?xml version="1.0" encoding="UTF-8">
+
+    <BT_adatbazis>
+
+        <DOLGOZO kod="1">
+            <nev>Regős Bence</nev>
+            <fizetes>450.000</fizetes>
+        </DOLGOZO>
+
+        <DOLGOZO kod="2">
+            <nev>Vincze Kristóf</nev>
+            <fizetes>550.000</fizetes>
+        </DOLGOZO>
+
+    </BT_adatbazis>

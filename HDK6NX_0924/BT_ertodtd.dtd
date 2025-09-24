@@ -1,0 +1,28 @@
+<!ELEMENT BT_modell (A,B,C)>
+    <!ELEMENT A (b,c, B*)>
+        <!ATTLIST A
+            a ID #REQUIRED>
+        
+        <!ELEMENT b (x,y)>
+            <!ELEMENT x (#PCDATA)>
+            <!ELEMENT y (#PCDATA)>
+        <!ELEMENT c (d,e)>
+            <!ELEMENT d (#PCDATA)>
+            <!ELEMENT e (#PCDATA)>
+        <!ELEMENT B (#PCDATA)>
+    
+    <!ELEMENT B (b, A*)>
+        <!ATTLIST B
+            a ID #REQUIRED>
+        
+        <!ELEMENT b (x,y)>
+            <!ELEMENT x (#PCDATA)>
+            <!ELEMENT y (#PCDATA)>
+        <!ELEMENT A (#PCDATA)>
+
+    <!ELEMENT C (b, B)>
+        <!ATTLIST C
+            a ID #REQUIRED>
+
+        <!ELEMENT b (#PCDATA)>
+        <!ELEMENT B (#PCDATA)>

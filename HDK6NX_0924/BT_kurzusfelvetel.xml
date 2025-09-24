@@ -1,0 +1,63 @@
+<!DOCTYPE BT_kurzusfelvetel SYSTEM "BT_kurzusfelvetel.dtd">
+
+<?xml version="1.0" encoding="UTF-8">
+
+    <BT_kurzusfelvetel tanev="2025/2026" egyetem="ME">
+
+        <hallgato id="HDK6NX.ME">
+
+            <nev>Bodó Tamás</nev>
+            <szulev>2004.07.25</szulev>
+            <szak evf="5">Programtervező_Informatikus Bsc</szak>
+
+        </hallgato>
+
+        <kurzusok>
+
+            <kurzus id="GEIAL333-B" nyelv="angol">
+
+                <kurzusnev>Mesterséges Intelligencia</kurzusnev>
+                <kredit>5</kredit>
+                <hely>A1 32 ea.</hely>
+                <idopont>Kedd 12:00-14:00</idopont>
+                <oktato>Kunné Dr. Tamási Judit</oktato>
+                <oraado>Fazekas Levente</oraado>
+
+            </kurzus>
+
+            <kurzus id="GEIAL334-B">
+
+                <kurzusnev>Webes Adatkezelő Környezetek</kurzusnev>
+                <kredit>5</kredit>
+                <hely>Inf 101</hely>
+                <idopont>Szerda 10:00-12:00</idopont>
+                <oktato>Dr. Bednarik László</oktato>
+
+            </kurzus>
+
+            <kurzus id="GEIAL335-B">
+
+                <kurzusnev>Web Technológiák</kurzusnev>
+                <kredit>5</kredit>
+                <hely>Inf 101</hely>
+                <idopont>Hétfő 14:00-16:00</idopont>
+                <oktato>Agárdi Anita</oktato>
+
+            </kurzus>
+
+            <kurzus id="GEIAL322-B" jovahagyas="igen">
+
+                <kurzusnev>Adatbázisrendszerek I.</kurzusnev>
+                <kredit>5</kredit>
+                <hely>Inf 202</hely>
+                <idopont>Szerda 10:00-12:00</idopont>
+                <oktato>Dr. Kovács László</oktato>
+
+            </kurzus>
+
+
+        </kurzusok>
+
+    </BT_kurzusfelvetel>
+
+</xml>

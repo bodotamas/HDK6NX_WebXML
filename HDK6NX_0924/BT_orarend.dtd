@@ -1,0 +1,11 @@
+<!ELEMENT HDK6NX_orarend (ora)+>
+    <!ELEMENT ora (targy, idopont, helyszin, oktato, szak)?>
+        <!ATTLIST ora
+            id ID #REQUIRED
+            tipus (eloadas|gyakorlat) "eloadas">
+        
+        <!ELEMENT targy (#PCDATA)>
+        <!ELEMENT idopont (nap, tol, ig)+>
+        <!ELEMENT helyszin (#PCDATA)>
+        <!ELEMENT oktato (#PCDATA)>
+        <!ELEMENT szak (#PCDATA)>
