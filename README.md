@@ -13,18 +13,54 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
 
 ## 📂 Repository felépítése
 
-📦 HDK6NX_WebXML
-
-┣ 📁 HDK6NX_0910
-┃ ┣ 📄 feladat1.xml
-┃ ┣ 📄 feladat1.xsd
-┃ ┗ 📄 readme.md
-┣ 📁 HDK6NX_0917
-┃ ┣ 📄 ...
-┣ 📁 HDK6NX_0924
-┃ ┣ 📄 ...
-...
-┗ 📄 README.md
+📁 examples
+    └── ...
+📁 MinGW
+    └── ...
+📁 Notepad++
+    └── ...
+📄 shell.bat
+📁 beadando
+    📁 assets
+        📁 models
+            📄 cube.obj
+            📄 fireplace.obj
+            📄 hare.obj
+            📄 house3.obj
+            📄 raptor.obj
+            📄 terrain.obj
+        📁 textures
+            📄 brick.jpg
+            📄 cube.png
+            📄 grass2.jpg
+            📄 guide.png
+            📄 guide2.png
+            📄 hare.jpg
+            📄 raptor.png
+            📄 wood.jpg
+            📁 skybox
+                📄back.jpg
+                📄bottom.jpg
+                📄front.jpg
+                📄left.jpg
+                📄right.jpg
+                📄skybox.png
+                📄top.jpg
+    📁 include
+        📄 app.h
+        📄 camera.h
+        📄 scene.h
+        📄 texture.h
+        📄 utils.h
+    📁 src
+        📄 app.c
+        📄 camera.c
+        📄 main.c
+        📄 scene.c
+        📄 texture.c
+        📄 utils.c
+    📄 fahaz.exe
+    📄 Makefile
 
 ---
 
