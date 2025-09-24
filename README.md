@@ -16,14 +16,13 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
 📁 HDK6NX_WebXML
 
     📁 HDK6NX_0910
-        📄 cube.obj
-        📄 fireplace.obj
-        📄 hare.obj
-        📄 house3.obj
-        📄 raptor.obj
-        📄 terrain.obj
-        📁 textures
-
+        📄 adatbazisegy.html
+        📄 iit.jpg
+        📄 kezdolap.css
+        📄 kezdolap.html
+        📄 webtechegy.html
+        📄 xml.html
+        📄 xml.png
 ---
 
 ## 🎯 Célkitűzések
