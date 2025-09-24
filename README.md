@@ -31,6 +31,8 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
         📄 HDK6NX_orarendER.png
         📄 HDK6NX_orarendXML.png
         📄 HDK6NX_orarendhtml.html
+    📁 HDK6NX_0924
+        📄
 ---
 
 ## 🎯 Célkitűzések
