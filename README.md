@@ -21,6 +21,7 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
     └── ...
 📄 shell.bat
 📁 beadando
+
     📁 assets
         📁 models
             📄 cube.obj
