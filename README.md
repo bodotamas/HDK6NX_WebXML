@@ -32,7 +32,14 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
         📄 HDK6NX_orarendXML.png
         📄 HDK6NX_orarendhtml.html
     📁 HDK6NX_0924
-        📄
+        📄 BT_adatbazis.dtd
+        📄 BT_adatbazis.xml
+        📄 BT_dtdtoxml.xml
+        📄 BT_ertodtd.dtd
+        📄 BT_kurzusfelvetel.dtd
+        📄 BT_kurzusfelvetel.xml
+        📄 BT_orarend.dtd
+        📄 HDK6NX_orarend.xml
 ---
 
 ## 🎯 Célkitűzések
