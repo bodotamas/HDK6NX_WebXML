@@ -23,6 +23,8 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
         📄 webtechegy.html
         📄 xml.html
         📄 xml.png
+    📁 HDK6NX_0917
+        📄
 ---
 
 ## 🎯 Célkitűzések
