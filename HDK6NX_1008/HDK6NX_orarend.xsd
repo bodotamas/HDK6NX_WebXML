@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+
+  <xs:simpleType name="IdTipus">
+    <xs:restriction base="xs:positiveInteger"/>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="OraFajtaTipus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="eloadas"/>
+      <xs:enumeration value="gyakorlat"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="IdoTipus">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([01][0-9]|2[0-3]):[0-5][0-9]"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  
+  <xs:simpleType name="SzovegTipus">
+    <xs:restriction base="xs:string">
+
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="TargyTipus">
+    <xs:attribute name="nev" type="SzovegTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="NapElemTipus">
+
+    <xs:attribute name="napn" type="SzovegTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="TolElemTipus">
+    <xs:attribute name="tolt" type="IdoTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="IgElemTipus">
+    <xs:attribute name="igt" type="IdoTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="HelyszinTipus">
+    <xs:attribute name="hol" type="SzovegTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="OktatoTipus">
+    <xs:attribute name="neve" type="SzovegTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="SzakTipus">
+    <xs:attribute name="sznev" type="SzovegTipus" use="required"/>
+  </xs:complexType>
+
+  <!-- ===== Összetett elemek ===== -->
+  <xs:complexType name="IdopontTipus">
+    <xs:sequence>
+      <xs:element name="nap" type="NapElemTipus"/>
+      <xs:element name="tol" type="TolElemTipus"/>
+      <xs:element name="ig"  type="IgElemTipus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="OraTipus">
+    <xs:sequence>
+      <xs:element name="targy"    type="TargyTipus"/>
+      <xs:element name="idopont"  type="IdopontTipus"/>
+      <xs:element name="helyszin" type="HelyszinTipus"/>
+      <xs:element name="oktato"   type="OktatoTipus"/>
+      <xs:element name="szak"     type="SzakTipus"/>
+    </xs:sequence>
+    <xs:attribute name="id"    type="IdTipus"       use="required"/>
+    <xs:attribute name="tipus" type="OraFajtaTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:element name="HDK6NX_orarend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ora" type="OraTipus" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

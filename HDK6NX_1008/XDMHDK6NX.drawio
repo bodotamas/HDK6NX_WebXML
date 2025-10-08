@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="" version="20.8.13" type="device">
+  <diagram name="Neptunkod_Vendeglatas">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="vendeg" value="Vendég
+—
+id: ID
+név: string
+email: string
+telefon: string" style="shape=rectangle;whiteSpace=wrap;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="asztal" value="Asztal
+—
+id: ID
+szám: int
+férőhely: int" style="shape=rectangle;whiteSpace=wrap;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="40" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="foglalas" value="Foglalás
+—
+id: ID
+dátum: date
+idősáv: string
+fő: int
+vendeg_id → Vendég
+asztal_id → Asztal" style="shape=rectangle;whiteSpace=wrap;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="40" width="240" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="termek" value="Termék
+—
+id: ID
+név: string
+ár: decimal(10,2)
+kategória: string" style="shape=rectangle;whiteSpace=wrap;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="230" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="rendeles" value="Rendelés
+—
+id: ID
+dátum: datetime
+összeg: decimal(10,2)
+vendeg_id → Vendég
+dolgozo_id → Dolgozó" style="shape=rectangle;whiteSpace=wrap;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="230" width="240" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="tetel" value="Tétel
+—
+rendeles_id → Rendelés
+termek_id → Termék
+mennyiség: int
+egységár: decimal(10,2)" style="shape=rectangle;whiteSpace=wrap;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="230" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="dolgozo" value="Dolgozó
+—
+id: ID
+név: string
+beosztás: string" style="shape=rectangle;whiteSpace=wrap;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="230" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="1 — *" style="endArrow=none;strokeWidth=1;" edge="1" parent="1" source="vendeg" target="foglalas">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="1 — *" style="endArrow=none;strokeWidth=1;" edge="1" parent="1" source="asztal" target="foglalas">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="1 — *" style="endArrow=none;strokeWidth=1;" edge="1" parent="1" source="vendeg" target="rendeles">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="1 — *" style="endArrow=none;strokeWidth=1;" edge="1" parent="1" source="rendeles" target="tetel">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="1 — *" style="endArrow=none;strokeWidth=1;" edge="1" parent="1" source="termek" target="tetel">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="0..1 — *" style="endArrow=none;strokeWidth=1;" edge="1" parent="1" source="dolgozo" target="rendeles">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

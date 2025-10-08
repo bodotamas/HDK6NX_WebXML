@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" version="20.8.13" type="device">
+  <diagram name="Neptunkod_kurzusfelvetel">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="bt" value="BT_kurzusfelvetel
+—
+tanev: string (2025/2026)
+egyetem: string (ME)" style="shape=rectangle;whiteSpace=wrap;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="250" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="hallgato" value="hallgato
+—
+id: string (HDK6NX.ME)
+nev: string
+szulev: date
+szak: string (evf)" style="shape=rectangle;whiteSpace=wrap;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="40" width="240" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="kurzus" value="kurzus
+—
+id: string
+nyelv: string
+jovahagyas: igen/nem
+kurzusnev: string
+kredit: int
+hely: string
+idopont: string
+oktato: string
+oraado: string?" style="shape=rectangle;whiteSpace=wrap;rounded=1;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="40" width="300" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="1 — 1" style="endArrow=none;strokeWidth=1;" edge="1" parent="1" source="bt" target="hallgato">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="1 — *" style="endArrow=none;strokeWidth=1;" edge="1" parent="1" source="bt" target="kurzus">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
