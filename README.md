@@ -40,6 +40,16 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
         📄 BT_kurzusfelvetel.xml
         📄 BT_orarend.dtd
         📄 HDK6NX_orarend.xml
+    📁 HDK6NX_1008
+        📄 HDK6NX_Vendeglatas.png
+        📄 HDK6NX_kurzusfelvetel.xsd
+        📄 HDK6NX_orarend.drawio
+        📄 HDK6NX_orarend.xml
+        📄 HDK6NX_orarend.xsd
+        📄 HDK6NX_orarend1.xsd
+        📄 HDK6NX_orarend2.xsd
+        📄 XDMHDK6NX.drawio
+
 ---
 
 ## 🎯 Célkitűzések
