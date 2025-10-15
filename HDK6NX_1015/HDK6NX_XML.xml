@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HDK6NX_Vendeglatas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <vendegLista>
+    <vendeg id="V001">
+      <nev>Kovács Anna</nev>
+      <email>anna.kovacs@example.com</email>
+      <telefon>+36 30 123 4567</telefon>
+    </vendeg>
+    <vendeg id="V002">
+      <nev>Szabó Béla</nev>
+      <email>bela.szabo@example.com</email>
+      <telefon>+36 20 765 4321</telefon>
+    </vendeg>
+  </vendegLista>
+
+  <asztalok>
+    <asztal id="T01">
+      <szam>1</szam>
+      <ferohely>2</ferohely>
+    </asztal>
+    <asztal id="T02">
+      <szam>5</szam>
+      <ferohely>4</ferohely>
+    </asztal>
+  </asztalok>
+
+  <foglalasok>
+    <foglalas id="F001" datum="2025-10-16" idosav="18:00-20:00" fo="2" vendegRef="V001" asztalRef="T02"/>
+    <foglalas id="F002" datum="2025-10-17" idosav="12:00-13:00" fo="1" vendegRef="V002" asztalRef="T01"/>
+  </foglalasok>
+
+  <termekek>
+    <termek id="P001">
+      <nev>Margherita pizza</nev>
+      <ar>3200.00</ar>
+      <kategoria>Étel</kategoria>
+    </termek>
+    <termek id="P002">
+      <nev>Házi limonádé</nev>
+      <ar>900.00</ar>
+      <kategoria>Ital</kategoria>
+    </termek>
+    <termek id="P003">
+      <nev>Gulyásleves</nev>
+      <ar>2500.00</ar>
+      <kategoria>Étel</kategoria>
+    </termek>
+    <termek id="P004">
+      <nev>Eszpresszó</nev>
+      <ar>650.00</ar>
+      <kategoria>Ital</kategoria>
+    </termek>
+  </termekek>
+
+  <dolgozok>
+    <dolgozo id="D001">
+      <nev>Nagy Éva</nev>
+      <beosztas>Felszolgáló</beosztas>
+    </dolgozo>
+    <dolgozo id="D002">
+      <nev>Kiss Péter</nev>
+      <beosztas>Pultos</beosztas>
+    </dolgozo>
+  </dolgozok>
+
+  <rendelesek>
+    <rendeles id="R001" datum="2025-10-16T18:25:00" osszeg="5000.00" vendegRef="V001" dolgozoRef="D001">
+      <tetelek>
+        <tetel termekRef="P001" mennyiseg="1" egysegar="3200.00"/>
+        <tetel termekRef="P002" mennyiseg="2" egysegar="900.00"/>
+      </tetelek>
+    </rendeles>
+
+    <rendeles id="R002" datum="2025-10-17T12:10:00" osszeg="3150.00" vendegRef="V002" dolgozoRef="D002">
+      <tetelek>
+        <tetel termekRef="P003" mennyiseg="1" egysegar="2500.00"/>
+        <tetel termekRef="P004" mennyiseg="1" egysegar="650.00"/>
+      </tetelek>
+    </rendeles>
+  </rendelesek>
+</HDK6NX_Vendeglatas>

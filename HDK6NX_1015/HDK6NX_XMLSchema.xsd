@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/Neptunkod_Vendeglatas"
+           xmlns="http://www.example.com/Neptunkod_Vendeglatas"
+           elementFormDefault="qualified">
+
+  <xs:simpleType name="idTipus">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z0-9]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="nevTipus">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="emailTipus">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[^@]+@[^@]+\.[^@]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="telefonTipus">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\+36\s[0-9]{2}\s[0-9]{3}\s[0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="arTipus">
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="2"/>
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="datumTipus">
+    <xs:restriction base="xs:date"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="datumIdoTipus">
+    <xs:restriction base="xs:dateTime"/>
+  </xs:simpleType>
+
+  <xs:complexType name="vendegTipus">
+    <xs:sequence>
+      <xs:element name="nev" type="nevTipus"/>
+      <xs:element name="email" type="emailTipus"/>
+      <xs:element name="telefon" type="telefonTipus"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="idTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="asztalTipus">
+    <xs:sequence>
+      <xs:element name="szam" type="xs:int"/>
+      <xs:element name="ferohely" type="xs:int"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="idTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="foglalasTipus">
+    <xs:attribute name="id" type="idTipus" use="required"/>
+    <xs:attribute name="datum" type="datumTipus" use="required"/>
+    <xs:attribute name="idosav" type="xs:string" use="required"/>
+    <xs:attribute name="fo" type="xs:int" use="required"/>
+    <xs:attribute name="vendegRef" type="idTipus" use="required"/>
+    <xs:attribute name="asztalRef" type="idTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="termekTipus">
+    <xs:sequence>
+      <xs:element name="nev" type="nevTipus"/>
+      <xs:element name="ar" type="arTipus"/>
+      <xs:element name="kategoria" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="idTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="dolgozoTipus">
+    <xs:sequence>
+      <xs:element name="nev" type="nevTipus"/>
+      <xs:element name="beosztas" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="idTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="tetelTipus">
+    <xs:attribute name="termekRef" type="idTipus" use="required"/>
+    <xs:attribute name="mennyiseg" type="xs:int" use="required"/>
+    <xs:attribute name="egysegar" type="arTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="rendelesTipus">
+    <xs:sequence>
+      <xs:element name="tetelek">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="tetel" type="tetelTipus" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="idTipus" use="required"/>
+    <xs:attribute name="datum" type="datumIdoTipus" use="required"/>
+    <xs:attribute name="osszeg" type="arTipus" use="required"/>
+    <xs:attribute name="vendegRef" type="idTipus" use="required"/>
+    <xs:attribute name="dolgozoRef" type="idTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:element name="Neptunkod_Vendeglatas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="vendegLista">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vendeg" type="vendegTipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="asztalok">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="asztal" type="asztalTipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="foglalasok">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="foglalas" type="foglalasTipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="termekek">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="termek" type="termekTipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="dolgozok">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="dolgozo" type="dolgozoTipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="rendelesek">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="rendeles" type="rendelesTipus" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
