@@ -32,13 +32,13 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
         📄 HDK6NX_orarendXML.png
         📄 HDK6NX_orarendhtml.html
     📁 HDK6NX_0924
-        📄 BT_adatbazis.dtd
-        📄 BT_adatbazis.xml
-        📄 BT_dtdtoxml.xml
-        📄 BT_ertodtd.dtd
-        📄 BT_kurzusfelvetel.dtd
-        📄 BT_kurzusfelvetel.xml
-        📄 BT_orarend.dtd
+        📄 HDK6NX_adatbazis.dtd
+        📄 HDK6NX_adatbazis.xml
+        📄 HDK6NX_dtdtoxml.xml
+        📄 HDK6NX_ertodtd.dtd
+        📄 HDK6NX_kurzusfelvetel.dtd
+        📄 HDK6NX_kurzusfelvetel.xml
+        📄 HDK6NX_orarend.dtd
         📄 HDK6NX_orarend.xml
     📁 HDK6NX_1008
         📄 HDK6NX_Vendeglatas.png
@@ -49,7 +49,13 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
         📄 HDK6NX_orarend1.xsd
         📄 HDK6NX_orarend2.xsd
         📄 XDMHDK6NX.drawio
-
+    📁 HDK6NX_1015
+        📄 HDK6NX_XML.xml
+        📄 HDK6NX_XMLgpt.xml
+        📄 HDK6NX_XMLSchema.xsd
+        📄 HDK6NX_orarend.xml
+        📄 DomReadHDK6NX.java
+        
 ---
 
 ## 🎯 Célkitűzések
