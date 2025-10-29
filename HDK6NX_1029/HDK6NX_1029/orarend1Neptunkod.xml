@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<HDK6NX_orarend>
+        
+    <ora id="1" tipus="eloadas">
+                
+        <targy nev="Web-Tech 1"/>
+                
+        <idopont>
+                        
+            <nap napn="hétfő"/>
+                        
+            <tol tolt="10:00"/>
+                        
+            <ig igt="12:00"/>
+                    
+        </idopont>
+                
+        <helyszin hol="A1 5 ea."/>
+                
+        <oktato neve="Dr. Agárdi Anita"/>
+                
+        <szak sznev="Programtervező Informatika"/>
+            
+    </ora>
+        
+    <ora id="2" tipus="eloadas">
+                
+        <targy nev="Vállalati Információs Rendszerek Fejleszése"/>
+                
+        <idopont>
+                        
+            <nap napn="Szerda"/>
+                        
+            <tol tolt="14:00"/>
+                        
+            <ig igt="16:00"/>
+                    
+        </idopont>
+                
+        <helyszin hol="Inf 103"/>
+                
+        <oktato neve="Dr. Sasvári Péter László "/>
+                
+        <szak sznev="Programtervező Informatika"/>
+            
+    </ora>
+        
+    <ora id="3" tipus="eloadas">
+                
+        <targy nev="Mesterséges Intelligencia"/>
+                
+        <idopont>
+                        
+            <nap napn="kedd"/>
+                        
+            <tol tolt="10:00"/>
+                        
+            <ig igt="12:00"/>
+                    
+        </idopont>
+                
+        <helyszin hol="A1 32 ea."/>
+                
+        <oktato neve="Dr. Kunné Tamási Judit"/>
+                
+        <szak sznev="Programtervező Informatika"/>
+            
+    </ora>
+        
+    <ora id="4" tipus="eloadas">
+                
+        <targy nev="Adatkezelés XML-ben"/>
+                
+        <idopont>
+                        
+            <nap napn="szerda"/>
+                        
+            <tol tolt="8:00"/>
+                        
+            <ig igt="10:00"/>
+                    
+        </idopont>
+                
+        <helyszin hol="T050"/>
+                
+        <oktato neve="Prof. Dr. Kovács László"/>
+                
+        <szak sznev="Programtervező Informatika"/>
+            
+    </ora>
+        
+    <ora id="5" tipus="eloadas">
+                
+        <targy nev="Algoritmusok és Vizsgálatuk"/>
+                
+        <idopont>
+                        
+            <nap napn="kedd"/>
+                        
+            <tol tolt="14:00"/>
+                        
+            <ig igt="16:00"/>
+                    
+        </idopont>
+                
+        <helyszin hol="A1 315"/>
+                
+        <oktato neve="Dr. Házy Attila"/>
+                
+        <szak sznev="Programtervező Informatika"/>
+            
+    </ora>
+        
+    <ora id="6" tipus="gyakorlat">
+                
+        <targy nev="WebTech 1"/>
+                
+        <idopont>
+                        
+            <nap napn="hétfő"/>
+                        
+            <tol tolt="14:00"/>
+                        
+            <ig igt="16:00"/>
+                    
+        </idopont>
+                
+        <helyszin hol="Inf 101"/>
+                
+        <oktato neve="Dr. Agárdi Anita"/>
+                
+        <szak sznev="Programtervező Informatika"/>
+            
+    </ora>
+        
+    <ora id="7" tipus="gyakorlat">
+                
+        <targy nev="Vállalati Információs Rendszerek Fejlesztése"/>
+                
+        <idopont>
+                        
+            <nap napn="szerda"/>
+                        
+            <tol tolt="18:00"/>
+                        
+            <ig igt="20:00"/>
+                    
+        </idopont>
+                
+        <helyszin hol="Inf 103"/>
+                
+        <oktato neve="Dr. Sasvári Péter László"/>
+                
+        <szak sznev="Programtervező Informatika"/>
+            
+    </ora>
+        
+    <ora id="8" tipus="gyakorlat">
+                
+        <targy nev="Adatkezelés XML-ben"/>
+                
+        <idopont>
+                        
+            <nap napn="szerda"/>
+                        
+            <tol tolt="10:00"/>
+                        
+            <ig igt="12:00"/>
+                    
+        </idopont>
+                
+        <helyszin hol="Inf 101"/>
+                
+        <oktato neve="Dr. Bednarik László"/>
+                
+        <szak sznev="Programtervező Informatika"/>
+            
+    </ora>
+        
+    <ora id="10" tipus="gyakorlat">
+                
+        <targy nev="Algoritmusok és Vizsgálatuk"/>
+                
+        <idopont>
+                        
+            <nap napn="kedd"/>
+                        
+            <tol tolt="16:00"/>
+                        
+            <ig igt="18:00"/>
+                    
+        </idopont>
+                
+        <helyszin hol="A1 305"/>
+                
+        <oktato neve="Dr. Házy Attila"/>
+                
+        <szak sznev="Programtervező Informatika"/>
+            
+    </ora>
+        
+    <ora id="11" tipus="gyakorlat">
+                
+        <targy nev="Mesterséges Intelligencia"/>
+                
+        <idopont>
+                        
+            <nap napn="kedd"/>
+                        
+            <tol tolt="12:00"/>
+                        
+            <ig igt="14:00"/>
+                    
+        </idopont>
+                
+        <helyszin hol="A1 32 ea."/>
+                
+        <oktato neve="Fazekas Levente"/>
+                
+        <szak sznev="Programtervező Informatika"/>
+            
+    </ora>
+    
+</HDK6NX_orarend>
