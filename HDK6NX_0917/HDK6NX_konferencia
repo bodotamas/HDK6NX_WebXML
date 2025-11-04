@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<konferencia>
+    <cim id="1">Adatkezelés XML-ben</cim>
+    <hallgatok id="2">
+    
+        <hallgato>
+
+            <nev>Bodó Tamás</nev>
+            <cim>3515 Miskolc Eper utca</cim>
+
+        </hallgato>
+
+    </hallgatok>
+    <helyszin id="3">33 előadó</helyszin>
+    <eloado id="4">
+    
+        <nev>Dr Bednarik László</nev>
+        <adoszam></adoszam>
+        <lakcim></lakcim>
+    
+    </eloado>
+    <datum id="5">2025. szeptember 17.</datum>
+
+</konferencia>

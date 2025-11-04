@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+
+  <xs:simpleType name="tanevTipus">
+    <xs:restriction base="xs:string">
+    
+      <xs:pattern value="\d{4}/\d{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="egyetemTipus">
+    <xs:restriction base="xs:string">
+
+      <xs:enumeration value="ME"/>
+      
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="idTipus">
+    <xs:restriction base="xs:string">
+
+      <xs:pattern value="[A-Z0-9]{6}\.[A-Z]{2,4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="igenNemTipus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="igen"/>
+      <xs:enumeration value="nem"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="datumPontTipus">
+
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{4}\.\d{2}\.\d{2}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="kreditTipus">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="napIdosavTipus">
+    
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(Hétfő|Kedd|Szerda|Csütörtök|Péntek|Szombat|Vasárnap)\s([01][0-9]|2[0-3]):[0-5][0-9]-([01][0-9]|2[0-3]):[0-5][0-9]"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="nyelvTipus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="magyar"/>
+      <xs:enumeration value="angol"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:complexType name="HallgatoTipus">
+    <xs:sequence>
+      <xs:element name="nev" type="xs:string"/>
+      <xs:element name="szulev" type="datumPontTipus"/>
+      <xs:element name="szak">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="evf" type="xs:positiveInteger" use="required"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="idTipus" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="KurzusTipus">
+    <xs:sequence>
+      <xs:element name="kurzusnev" type="xs:string"/>
+      <xs:element name="kredit" type="kreditTipus"/>
+      <xs:element name="hely" type="xs:string"/>
+      <xs:element name="idopont" type="napIdosavTipus"/>
+      <xs:element name="oktato" type="xs:string"/>
+      <xs:element name="oraado" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="nyelv" type="nyelvTipus" use="optional"/>
+    <xs:attribute name="jovahagyas" type="igenNemTipus" use="optional"/>
+  </xs:complexType>
+
+  <xs:complexType name="KurzusokTipus">
+    <xs:sequence>
+      <xs:element name="kurzus" type="KurzusTipus" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:element name="hallgato" type="HallgatoTipus"/>
+  <xs:element name="kurzusok" type="KurzusokTipus"/>
+
+
+  <xs:element name="BT_kurzusfelvetel">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element ref="hallgato"/>
+        <xs:element ref="kurzusok"/>
+      </xs:sequence>
+      <xs:attribute name="tanev" type="tanevTipus" use="required"/>
+      <xs:attribute name="egyetem" type="egyetemTipus" use="required"/>
+    </xs:complexType>
+
+   
+    <xs:key name="egyediKurzusId">
+      <xs:selector xpath="kurzusok/kurzus"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+  </xs:element>
+
+</xs:schema>

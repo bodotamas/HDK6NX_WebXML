@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hallgatok>
+
+    <hallgato id="1">
+        <firstname>Bodó</firstname>
+        <lastname>Tamás</lastname>
+        <profession>tanuló</profession>
+    </hallgato>
+
+    <hallgato id="2">
+        <firstname>Nagy</firstname>
+        <lastname>Ferenc</lastname>
+        <profession>szoftverfejlesztő</profession>
+    </hallgato>
+
+    <hallgato id="3">
+        <firstname>Vass</firstname>
+        <lastname>Martin</lastname>
+        <profession>tanuló</profession>
+    </hallgato>
+
+</hallgatok>

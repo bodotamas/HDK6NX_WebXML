@@ -1,0 +1,78 @@
+# 📚 XML – Webes adatkezelő környezetek  
+*Miskolci Egyetem*
+
+---
+
+## 📝 Projekt leírása
+Ez a repository a **Webes adatkezelő környezetek (XML)** című tárgy gyakorlati munkáit tartalmazza, melyet a Miskolci Egyetemen végeztünk.  
+A cél, hogy hétről hétre feltöltsük az órai feladatokat, gyakorlatokat és projektmunkákat, így nyomon követhető legyen a fejlődés, valamint rendszerezve legyen minden anyag.  
+
+A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyarázatokat, dokumentációkat és példákat is, hogy a munka átlátható és jól követhető legyen.
+
+---
+
+## 📂 Repository felépítése
+
+📁 HDK6NX_WebXML
+
+    📁 HDK6NX_0910
+        📄 adatbazisegy.html
+        📄 iit.jpg
+        📄 kezdolap.css
+        📄 kezdolap.html
+        📄 webtechegy.html
+        📄 xml.html
+        📄 xml.png
+    📁 HDK6NX_0917
+        📄 HDK6NX_konferencia
+        📄 HDK6NX_mozi.xml
+        📄 HDK6NX_mozi_ext.xml
+        📄 HDK6NX_orarend.xml
+        📄 HDK6NX_orarendER.png
+        📄 HDK6NX_orarendXML.png
+        📄 HDK6NX_orarendhtml.html
+    📁 HDK6NX_0924
+        📄 HDK6NX_adatbazis.dtd
+        📄 HDK6NX_adatbazis.xml
+        📄 HDK6NX_dtdtoxml.xml
+        📄 HDK6NX_ertodtd.dtd
+        📄 HDK6NX_kurzusfelvetel.dtd
+        📄 HDK6NX_kurzusfelvetel.xml
+        📄 HDK6NX_orarend.dtd
+        📄 HDK6NX_orarend.xml
+    📁 HDK6NX_1008
+        📄 HDK6NX_Vendeglatas.png
+        📄 HDK6NX_kurzusfelvetel.xsd
+        📄 HDK6NX_orarend.drawio
+        📄 HDK6NX_orarend.xml
+        📄 HDK6NX_orarend.xsd
+        📄 HDK6NX_orarend1.xsd
+        📄 HDK6NX_orarend2.xsd
+        📄 XDMHDK6NX.drawio
+    📁 HDK6NX_1015
+        📄 HDK6NX_XML.xml
+        📄 HDK6NX_XMLgpt.xml
+        📄 HDK6NX_XMLSchema.xsd
+        📄 HDK6NX_orarend.xml
+        📄 DomReadHDK6NX.java
+        
+---
+
+## 🎯 Célkitűzések
+
+1. **XML alapok elsajátítása**  
+   – jól formázott dokumentumok készítése  
+
+2. **Validáció**  
+   – XSD és DTD fájlok segítségével  
+
+3. **Transzformáció és megjelenítés**  
+   – XSLT használata különböző megjelenítési formákhoz  
+
+4. **Lekérdezések**  
+   – XPath és XQuery feladatok megoldása  
+
+5. **Projektmunka**  
+   – egy komplexebb XML alapú alkalmazás megvalósítása  
+
+---
