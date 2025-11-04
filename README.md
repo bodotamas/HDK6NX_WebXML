@@ -55,7 +55,47 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
         📄 HDK6NX_XMLSchema.xsd
         📄 HDK6NX_orarend.xml
         📄 DomReadHDK6NX.java
-        
+    📁 HDK6NX_1029
+            📄 DomParseHDK6NX.iml
+            📄 HDK6NXhallgato.xml
+            📄 hallgato1HDK6NX.xml
+            📄 orarend1HDK6NX.xml
+            📄 orarend1Nemtunkod.xml
+            📁 HDK6NX_1029
+                📁 src
+                    📄 Main.java
+                    📁 domHDK6NX1029
+                        📄 domReadHDK6NX.java
+                        📄 domReadHDK6NX1.java
+                        📄 domWriteHDK6NX.java
+                        📄 domWriteHDK6NX1.java
+        📁 .idea
+            📄 .gitignore
+            📄 misc.xml
+            📄 modules.xml
+    📁 HDK6NX_1105
+    📁 HDK6NX_XMLTask
+        📄 HDK6NX_ER.drawio
+        📄 HDK6NX_ER.jpg
+        📄 HDK6NX_XDM.drawio
+        📄 HDK6NX_XDM.jpg
+        📄 HDK6NX_XML.xml
+        📄 HDK6NX_XMLSchema.xsd
+        📄 jegyzokonyv.pdf
+        📁 HDK6NX_XMLTask
+            📄 jegyzokonyv.pdf
+            📄 HDK6NXDOMParse.iml
+            📄 HDK6NX_XML.xml
+            📄 HDK6NX_XML_updated.xml
+                📁 src
+                    📄 Main.java
+                    📁 hdk6nx
+                        📁 domparse
+                            📁 hu
+                                📄 HDK6NXDomModify.java
+                                📄 HDK6NXDomQuery.java
+                                📄 HDK6NXDomRead.java   
+               
 ---
 
 ## 🎯 Célkitűzések
