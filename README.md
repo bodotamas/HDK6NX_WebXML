@@ -80,6 +80,13 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
         📄 orarendModify1HDK6NX.xml
         📄 orarendModify1Neptunkod.xml
         📄 orarendQuery1Neptunkod.txt
+        📁 src
+            📄 Main.java
+            📁 domHDK6NX1105
+                📄 DOMModify1HDK6NX.java
+                📄 DOMModifyHDK6NX.java
+                📄 DomQuery1HDK6NX.java
+                📄 DomQueryHDK6NX.java 
     📁 HDK6NX_XMLTask
         📄 HDK6NX_ER.drawio
         📄 HDK6NX_ER.jpg
