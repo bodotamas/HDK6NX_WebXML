@@ -73,7 +73,13 @@ A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyar�
             📄 .gitignore
             📄 misc.xml
             📄 modules.xml
-    📁 HDK6NX_1105
+    📁 HDK6NX_1105/DomParseHDK6NX�
+        📄 DomParseHDK6NX.iml
+        📄 HDK6NXhallgato.xml
+        📄 orarendHDK6NX.xml
+        📄 orarendModify1HDK6NX.xml
+        📄 orarendModify1Neptunkod.xml
+        📄 orarendQuery1Neptunkod.txt
     📁 HDK6NX_XMLTask
         📄 HDK6NX_ER.drawio
         📄 HDK6NX_ER.jpg
