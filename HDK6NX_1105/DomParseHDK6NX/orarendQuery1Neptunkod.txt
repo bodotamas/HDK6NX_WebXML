@@ -1,0 +1,8 @@
+ID: 1
+Típus: eloadas
+Tárgy: Web-Tech 1
+Nap: hétfő
+Időtartam: 10:00 - 12:00
+Helyszín: A1 5 ea.
+Oktató: Dr. Agárdi Anita
+Szak: Programtervező Informatika
