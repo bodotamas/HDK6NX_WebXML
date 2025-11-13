@@ -7,8 +7,6 @@
 Ez a repository a **Webes adatkezelő környezetek (XML)** című tárgy gyakorlati munkáit tartalmazza, melyet a Miskolci Egyetemen végeztünk.  
 A cél, hogy hétről hétre feltöltsük az órai feladatokat, gyakorlatokat és projektmunkákat, így nyomon követhető legyen a fejlődés, valamint rendszerezve legyen minden anyag.  
 
-A repository nemcsak a beadott feladatokat tartalmazza, hanem részletes magyarázatokat, dokumentációkat és példákat is, hogy a munka átlátható és jól követhető legyen.
-
 ---
 
 ## 📂 Repository felépítése
