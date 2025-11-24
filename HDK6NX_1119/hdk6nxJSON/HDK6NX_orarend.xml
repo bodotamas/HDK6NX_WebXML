@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ITF-8"?>
+<HDK6NX_orarend>
+    <ora id="1", tipus="eloadas">
+        <targy>Web Technologiak 1</targy>
+        <idopont>
+            <nap>hetfo</nap>
+            <tol>10</tol>
+            <ig>12</ig>
+        </idopont>
+        <helyszin>A1 magasfsz V.ea.</helyszin>
+        <oktato>Agradi Anita</oktato>
+        <szak>Programtervezo informatikus</szak>
+    </ora>
+
+    <ora id="2", tipus="eloadas">
+        <targy>Muszaki szaknyelv 1</targy>
+        <idopont>
+            <nap>Hetfo</nap>
+            <tol>12</tol>
+            <ig>14</ig>
+        </idopont>
+        <helyszin>A1/316 III.ea.</helyszin>
+        <oktato>Pataki Janosne</oktato>
+        <szak>Programtervezo informatikus</szak>
+    </ora>
+
+
+
+    <ora id="3", tipus="eloadas">
+        <targy>Mesterseges Intelligencia alapjai</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>10</tol>
+            <ig>12</ig>
+        </idopont>
+        <helyszin>A1 XXXII.ea.</helyszin>
+        <oktato>Kunne Dr. Tamas Judit</oktato>
+        <szak>Programtervezo informatikus</szak>
+    </ora>
+
+    <ora id="4", tipus="gyakorlat">
+        <targy>Mesterseges Intelligencia alapjai</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>12</tol>
+            <ig>14</ig>
+        </idopont>
+        <helyszin>A1 XXXII.ea.</helyszin>
+        <oktato>Fazekas Levente</oktato>
+        <szak>Programtervezo informatikus</szak>
+    </ora>
+
+    <ora id="5", tipus="eloadas">
+        <targy>Algoritmusok es vizsgalatuk</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>14</tol>
+            <ig>16</ig>
+        </idopont>
+        <helyszin>A1/305 XXX.ea.</helyszin>
+        <oktato>Dr. Hazy Attila</oktato>
+        <szak>Programtervezo informatikus</szak>
+    </ora>
+
+    <ora id="6", tipus="gyakorlat">
+        <targy>Algoritmusok es vizsgalatuk</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <tol>14</tol>
+            <ig>16</ig>
+        </idopont>
+        <helyszin>A1/305 XXX.ea.</helyszin>
+        <oktato>Dr. Hazy Attila</oktato>
+        <szak>Programtervezo informatikus</szak>
+    </ora>
+
+
+
+    <ora id="7", tipus="eloadas">
+        <targy>Webes adatkezelo kornyezetek</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>8</tol>
+            <ig>10</ig>
+        </idopont>
+        <helyszin>A1/310</helyszin>
+        <oktato>Dr. Kovacs Laszlo Jozsef</oktato>
+        <szak>Programtervezo informatikus</szak>
+    </ora>
+
+    <ora id="8", tipus="gyakorlat">
+        <targy>Webes adatkezelo kornyezetek</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>10</tol>
+            <ig>12</ig>
+        </idopont>
+        <helyszin>Inf103</helyszin>
+        <oktato>Dr. Bednarik Laszlo</oktato>
+        <szak>Programtervezo informatikus</szak>
+    </ora>
+
+    <ora id="9", tipus="gyakorlat">
+        <targy>Web Technologiak</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>12</tol>
+            <ig>14</ig>
+        </idopont>
+        <helyszin>Inf101</helyszin>
+        <oktato>Dr. Bednarik Laszlo</oktato>
+        <szak>Programtervezo informatikus</szak>
+    </ora>
+
+    <ora id="10", tipus="eloadas">
+        <targy>Vallalati informacios rendszerek</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>14</tol>
+            <ig>16</ig>
+        </idopont>
+        <helyszin>Inf101</helyszin>
+        <oktato>Dr. Sasvari Peter</oktato>
+        <szak>Programtervezo informatikus</szak>
+    </ora>
+
+    <ora id="11", tipus="gyakorlat">
+        <targy>Vallalati informacios rendszerek</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <tol>18</tol>
+            <ig>20</ig>
+        </idopont>
+        <helyszin>Inf101</helyszin>
+        <oktato>Dr. Sasvari Peter</oktato>
+        <szak>Programtervezo informatikus</szak>
+    </ora>
+
+
+</HDK6NX_orarend>

@@ -1,0 +1,56 @@
+package HDK6NXJSON;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+public class JSONWriteHDK6NX {
+
+    public static void main(String[] args) {
+
+        try (FileReader reader = new FileReader("orarendHDK6NX.json")) {
+
+            JSONParser jsonParser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+
+            // A gyökérelem
+            JSONObject root = (JSONObject) jsonObject.get("HDK6NX_orarend");
+            JSONArray lessons = (JSONArray) root.get("ora");
+
+            System.out.println("HDK6NX Órarend 2025 ősz (KIÍRÁS):\n");
+
+            // Blokk formájú konzolkiírás
+            for (int i = 0; i < lessons.size(); i++) {
+                JSONObject lesson = (JSONObject) lessons.get(i);
+                JSONObject time = (JSONObject) lesson.get("idopont");
+
+                System.out.println("-------- ÓRA --------");
+                System.out.println("Tárgy: " + lesson.get("targy"));
+                System.out.println("Időpont: " + time.get("nap") + " " +
+                                   time.get("tol") + "-" + time.get("ig"));
+                System.out.println("Helyszín: " + lesson.get("helyszin"));
+                System.out.println("Oktató: " + lesson.get("oktato"));
+                System.out.println("Szak: " + lesson.get("szak"));
+                System.out.println();
+            }
+
+            // ÚJ JSON objektum létrehozása, amit fájlba írunk
+            JSONObject ujJson = new JSONObject();
+            ujJson.put("HDK6NX_orarend", root);  // ugyanazt a szerkezetet másoljuk
+
+            // JSON fájlba írás
+            FileWriter writer = new FileWriter("orarendHDK6NX_kiir.json");
+            writer.write(ujJson.toJSONString());
+            writer.flush();
+            writer.close();
+
+            System.out.println("JSON sikeresen kiírva a fájlba: orarendHDK6NX_kiir.json");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
