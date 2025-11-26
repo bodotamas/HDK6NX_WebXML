@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Hallgatók táblázata</title>
+    </head>
+    <body>
+        <h1>Hallgatók</h1>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Vezetéknév</th>
+                <th>Keresztnév</th>
+                <th>Becenév</th>
+                <th>Kor</th>
+                <th>Ösztöndíj</th>
+            </tr>
+            
+            <tr>
+                <td>01</td>
+                <td>Bencze</td>
+                <td>Zsolt</td>
+                <td>Zsolesz</td>
+                <td>40</td>
+                <td>160000</td>
+            </tr>
+            
+            <tr>
+                <td>02</td>
+                <td>Fekete</td>
+                <td>Peter</td>
+                <td>Petya</td>
+                <td>22</td>
+                <td>600000</td>
+            </tr>
+            
+            <tr>
+                <td>03</td>
+                <td>Kovacs</td>
+                <td>Dorka</td>
+                <td>Dorka</td>
+                <td>20</td>
+                <td>520000</td>
+            </tr>
+            
+            <tr>
+                <td>04</td>
+                <td>Zsoldos</td>
+                <td>Andrea</td>
+                <td>Andi</td>
+                <td>18</td>
+                <td>450000</td>
+            </tr>
+            
+        </table>
+    </body>
+</html>
