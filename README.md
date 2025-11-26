@@ -93,6 +93,12 @@ A cél, hogy hétről hétre feltöltsük az órai feladatokat, gyakorlatokat é
             📄 orarendHDK6NX.xml
             📄 studentHDK6NX.xml
             📄 xPathQueryHDK6NX.java
+    📁 HDK6NX_1119/hdk6nxJSON
+        📄 HDK6NX_orarend.xml
+        📄 JSONReadHDK6NX.json
+        📄 JSONWriteHDK6NX.json
+        📄 JScriptHDK6NX.html
+        📄 orarendHDK6NX.json
     📁 HDK6NX_XMLTask
         📄 HDK6NX_ER.drawio
         📄 HDK6NX_ER.jpg
