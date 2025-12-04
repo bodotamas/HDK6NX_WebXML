@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    HDK6NX_XML.xml
+    Laptop/telefon szerviz nyilvántartás
+-->
+
+<HDK6NX_szerviz xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="HDK6NX_XSD.xsd">
+
+    <!-- ===== ÜGYFELEK ===== -->
+    <!-- 1. ügyfél példa -->
+    <ugyfel ugyfelID="U001">
+        <nev>Kiss Péter</nev>
+        <telefon>+36-30-111-1111</telefon>
+        <email>peter.kiss@example.com</email>
+        <cimVaros>Miskolc</cimVaros>
+        <cimUtca>Kossuth u. 12.</cimUtca>
+        <cimIrsz>3525</cimIrsz>
+    </ugyfel>
+
+    <!-- 2. ügyfél példa -->
+    <ugyfel ugyfelID="U002">
+        <nev>Nagy Anna</nev>
+        <telefon>+36-20-222-2222</telefon>
+        <email>anna.nagy@example.com</email>
+        <cimVaros>Debrecen</cimVaros>
+        <cimUtca>Fő tér 5.</cimUtca>
+        <cimIrsz>4024</cimIrsz>
+    </ugyfel>
+
+
+    <!-- ===== ESZKÖZÖK ===== -->
+    <!-- U001 első eszköze -->
+    <eszkoz eszkozID="E001" ugyfelID="U001">
+        <tipus>telefon</tipus>
+        <marka>Samsung</marka>
+        <modell>Galaxy S22</modell>
+        <azonosito>IMEI-99887766</azonosito>
+        <garancialis>igen</garancialis>
+    </eszkoz>
+
+    <!-- U001 második eszköze -->
+    <eszkoz eszkozID="E002" ugyfelID="U001">
+        <tipus>laptop</tipus>
+        <marka>Lenovo</marka>
+        <modell>ThinkPad T14</modell>
+        <azonosito>S/N-THNK-4455</azonosito>
+        <garancialis>nem</garancialis>
+    </eszkoz>
+
+    <!-- U002 eszköze -->
+    <eszkoz eszkozID="E003" ugyfelID="U002">
+        <tipus>telefon</tipus>
+        <marka>Apple</marka>
+        <modell>iPhone 14</modell>
+        <azonosito>IMEI-44556677</azonosito>
+        <garancialis>igen</garancialis>
+    </eszkoz>
+
+
+    <!-- ===== TECHNIKUSOK ===== -->
+    <technikus technikusID="T001">
+        <nev>Szabó Dániel</nev>
+        <szakTerulet>mobil</szakTerulet>
+        <telefon>+36-30-555-1000</telefon>
+        <email>daniel.szabo@szerviz.hu</email>
+    </technikus>
+
+    <technikus technikusID="T002">
+        <nev>Fekete Réka</nev>
+        <szakTerulet>apple</szakTerulet>
+        <telefon>+36-70-400-4000</telefon>
+        <email>reka.fekete@szerviz.hu</email>
+    </technikus>
+
+
+    <!-- ===== MEGRENDELÉSEK ===== -->
+    <!-- E001-hez tartozó rendelések -->
+    <megrendeles megrendelesID="M001" eszkozID="E001">
+        <hibaLeiras>Betört kijelző, érintés működik.</hibaLeiras>
+        <allapot>javítás alatt</allapot>
+        <beerkDatum>2025-10-29</beerkDatum>
+        <fizetendoOsszeg>45000</fizetendoOsszeg>
+    </megrendeles>
+
+    <megrendeles megrendelesID="M002" eszkozID="E001">
+        <hibaLeiras>Vízbe esett, nem kapcsol be.</hibaLeiras>
+        <allapot>befogadva</allapot>
+        <beerkDatum>2025-11-02</beerkDatum>
+        <fizetendoOsszeg>0</fizetendoOsszeg>
+    </megrendeles>
+
+    <!-- E003-hoz tartozó megrendelés -->
+    <megrendeles megrendelesID="M003" eszkozID="E003">
+        <hibaLeiras>Gyenge akkumulátor</hibaLeiras>
+        <allapot>elkészült</allapot>
+        <beerkDatum>2025-10-25</beerkDatum>
+        <fizetendoOsszeg>28000</fizetendoOsszeg>
+    </megrendeles>
+
+
+    <!-- ===== SZERELÉSEK (kapcsolat megrendelés–technikus) ===== -->
+    <szereles szID="SZ001" megrendID="M001" techID="T001">
+        <szerep>diagnosztika</szerep>
+        <munkaOra>1.5</munkaOra>
+        <munkaDatum>2025-10-30</munkaDatum>
+    </szereles>
+
+    <szereles szID="SZ002" megrendID="M003" techID="T002">
+        <szerep>akku csere</szerep>
+        <munkaOra>0.8</munkaOra>
+        <munkaDatum>2025-10-26</munkaDatum>
+    </szereles>
+
+
+    <!-- ===== ALKATRÉSZEK ===== -->
+    <alkatresz alkatreszID="A001">
+        <megnevezes>Samsung S22 kijelző modul</megnevezes>
+        <tipus>kijelzo</tipus>
+        <beszerAr>28000</beszerAr>
+        <raktaronDb>3</raktaronDb>
+    </alkatresz>
+
+    <alkatresz alkatreszID="A002">
+        <megnevezes>Kijelző ragasztó készlet</megnevezes>
+        <tipus>kiegészítő</tipus>
+        <beszerAr>1200</beszerAr>
+        <raktaronDb>15</raktaronDb>
+    </alkatresz>
+
+    <alkatresz alkatreszID="A003">
+        <megnevezes>iPhone 14 gyári akkumulátor</megnevezes>
+        <tipus>akku</tipus>
+        <beszerAr>17000</beszerAr>
+        <raktaronDb>6</raktaronDb>
+    </alkatresz>
+
+
+    <!-- ===== FELHASZNÁLT ALKATRÉSZEK (kapcsolat megrendelés–alkatrész) ===== -->
+    <felhasznalt_alkatresz faID="FA001" megrendID="M001" alkatreszID="A001">
+        <mennyiseg>1</mennyiseg>
+        <egysegar>35000</egysegar>
+        <felhasznalasDatum>2025-10-30</felhasznalasDatum>
+    </felhasznalt_alkatresz>
+
+    <felhasznalt_alkatresz faID="FA002" megrendID="M001" alkatreszID="A002">
+        <mennyiseg>1</mennyiseg>
+        <egysegar>2000</egysegar>
+        <felhasznalasDatum>2025-10-30</felhasznalasDatum>
+    </felhasznalt_alkatresz>
+
+    <felhasznalt_alkatresz faID="FA003" megrendID="M003" alkatreszID="A003">
+        <mennyiseg>1</mennyiseg>
+        <egysegar>22000</egysegar>
+        <felhasznalasDatum>2025-10-26</felhasznalasDatum>
+    </felhasznalt_alkatresz>
+
+</HDK6NX_szerviz>

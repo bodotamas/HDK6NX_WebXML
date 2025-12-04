@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- ======================
+         GYÖKÉRELEM
+         ====================== -->
+    <xs:element name="HDK6NX_szerviz">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ugyfel" type="UgyfelType" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="eszkoz" type="EszkozType" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="technikus" type="TechnikusType" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="megrendeles" type="MegrendelesType" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="szereles" type="SzerelesType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="alkatresz" type="AlkatreszType" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="felhasznalt_alkatresz" type="FelhasznaltAlkatreszType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <!-- ===== KULCSOK (xs:key) ===== -->
+
+        <!-- Ugyfel PK -->
+        <xs:key name="Ugyfel_kulcs">
+            <xs:selector xpath="ugyfel"/>
+            <xs:field xpath="@ugyfelID"/>
+        </xs:key>
+
+        <!-- Eszkoz PK -->
+        <xs:key name="Eszkoz_kulcs">
+            <xs:selector xpath="eszkoz"/>
+            <xs:field xpath="@eszkozID"/>
+        </xs:key>
+
+        <!-- Technikus PK -->
+        <xs:key name="Technikus_kulcs">
+            <xs:selector xpath="technikus"/>
+            <xs:field xpath="@technikusID"/>
+        </xs:key>
+
+        <!-- Megrendeles PK -->
+        <xs:key name="Megrendeles_kulcs">
+            <xs:selector xpath="megrendeles"/>
+            <xs:field xpath="@megrendelesID"/>
+        </xs:key>
+
+        <!-- Alkatresz PK -->
+        <xs:key name="Alkatresz_kulcs">
+            <xs:selector xpath="alkatresz"/>
+            <xs:field xpath="@alkatreszID"/>
+        </xs:key>
+
+        <!-- Szereles egyedi azonosító (szID) -->
+        <xs:unique name="Szereles_kulcs">
+            <xs:selector xpath="szereles"/>
+            <xs:field xpath="@szID"/>
+        </xs:unique>
+
+        <!-- Felhasznalt_alkatresz egyedi azonosító (faID) -->
+        <xs:unique name="FelhasznaltAlkatresz_kulcs">
+            <xs:selector xpath="felhasznalt_alkatresz"/>
+            <xs:field xpath="@faID"/>
+        </xs:unique>
+
+        <!-- ===== IDEGEN KULCSOK (xs:keyref) ===== -->
+
+        <!-- Eszkoz.ugyfelID -> Ugyfel.ugyfelID -->
+        <xs:keyref name="Eszkoz_Ugyfel_FK" refer="Ugyfel_kulcs">
+            <xs:selector xpath="eszkoz"/>
+            <xs:field xpath="@ugyfelID"/>
+        </xs:keyref>
+
+        <!-- Megrendeles.eszkozID -> Eszkoz.eszkozID -->
+        <xs:keyref name="Megrendeles_Eszkoz_FK" refer="Eszkoz_kulcs">
+            <xs:selector xpath="megrendeles"/>
+            <xs:field xpath="@eszkozID"/>
+        </xs:keyref>
+
+        <!-- Szereles.megrendID -> Megrendeles.megrendelesID -->
+        <xs:keyref name="Szereles_Megrendeles_FK" refer="Megrendeles_kulcs">
+            <xs:selector xpath="szereles"/>
+            <xs:field xpath="@megrendID"/>
+        </xs:keyref>
+
+        <!-- Szereles.techID -> Technikus.technikusID -->
+        <xs:keyref name="Szereles_Technikus_FK" refer="Technikus_kulcs">
+            <xs:selector xpath="szereles"/>
+            <xs:field xpath="@techID"/>
+        </xs:keyref>
+
+        <!-- Felhasznalt_alkatresz.megrendID -> Megrendeles.megrendelesID -->
+        <xs:keyref name="Felhasznalt_Megrendeles_FK" refer="Megrendeles_kulcs">
+            <xs:selector xpath="felhasznalt_alkatresz"/>
+            <xs:field xpath="@megrendID"/>
+        </xs:keyref>
+
+        <!-- Felhasznalt_alkatresz.alkatreszID -> Alkatresz.alkatreszID -->
+        <xs:keyref name="Felhasznalt_Alkatresz_FK" refer="Alkatresz_kulcs">
+            <xs:selector xpath="felhasznalt_alkatresz"/>
+            <xs:field xpath="@alkatreszID"/>
+        </xs:keyref>
+
+    </xs:element>
+
+
+    <!-- ======================
+         KOMPLEX TÍPUSOK
+         ====================== -->
+
+    <!-- UGYFEL -->
+    <xs:complexType name="UgyfelType">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"/>
+            <xs:element name="telefon" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="cimVaros" type="xs:string"/>
+            <xs:element name="cimUtca" type="xs:string"/>
+            <xs:element name="cimIrsz" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="ugyfelID" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+    <!-- ESZKOZ -->
+    <xs:complexType name="EszkozType">
+        <xs:sequence>
+            <xs:element name="tipus" type="xs:string"/>
+            <xs:element name="marka" type="xs:string"/>
+            <xs:element name="modell" type="xs:string"/>
+            <xs:element name="azonosito" type="xs:string"/>
+            <xs:element name="garancialis" type="xs:string"/> <!-- lehetne enum: igen/nem -->
+        </xs:sequence>
+        <xs:attribute name="eszkozID" type="xs:ID" use="required"/>
+        <xs:attribute name="ugyfelID" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+
+    <!-- TECHNIKUS -->
+    <xs:complexType name="TechnikusType">
+        <xs:sequence>
+            <xs:element name="nev" type="xs:string"/>
+            <xs:element name="szakTerulet" type="xs:string"/>
+            <xs:element name="telefon" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="technikusID" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+    <!-- MEGRENDELES -->
+    <xs:complexType name="MegrendelesType">
+        <xs:sequence>
+            <xs:element name="hibaLeiras" type="xs:string"/>
+            <xs:element name="allapot" type="xs:string"/>
+            <xs:element name="beerkDatum" type="xs:date"/>
+            <xs:element name="fizetendoOsszeg" type="xs:integer"/>
+        </xs:sequence>
+        <xs:attribute name="megrendelesID" type="xs:ID" use="required"/>
+        <xs:attribute name="eszkozID" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+
+    <!-- SZERELES -->
+    <xs:complexType name="SzerelesType">
+        <xs:sequence>
+            <xs:element name="szerep" type="xs:string"/>
+            <xs:element name="munkaOra" type="xs:decimal"/>
+            <xs:element name="munkaDatum" type="xs:date"/>
+        </xs:sequence>
+        <xs:attribute name="szID" type="xs:ID" use="required"/>
+        <xs:attribute name="megrendID" type="xs:IDREF" use="required"/>
+        <xs:attribute name="techID" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+
+    <!-- ALKATRESZ -->
+    <xs:complexType name="AlkatreszType">
+        <xs:sequence>
+            <xs:element name="megnevezes" type="xs:string"/>
+            <xs:element name="tipus" type="xs:string"/>
+            <xs:element name="beszerAr" type="xs:integer"/>
+            <xs:element name="raktaronDb" type="xs:integer"/>
+        </xs:sequence>
+        <xs:attribute name="alkatreszID" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+    <!-- FELHASZNALT_ALKATRESZ -->
+    <xs:complexType name="FelhasznaltAlkatreszType">
+        <xs:sequence>
+            <xs:element name="mennyiseg" type="xs:integer"/>
+            <xs:element name="egysegar" type="xs:integer"/>
+            <xs:element name="felhasznalasDatum" type="xs:date"/>
+        </xs:sequence>
+        <xs:attribute name="faID" type="xs:ID" use="required"/>
+        <xs:attribute name="megrendID" type="xs:IDREF" use="required"/>
+        <xs:attribute name="alkatreszID" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+
+</xs:schema>
