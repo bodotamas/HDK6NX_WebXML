@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Órarend JSON</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .wrapper {
+            width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        .toolbar {
+            margin-bottom: 10px;
+        }
+
+        .toolbar input[type="file"] {
+            margin-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 4px 6px;
+            text-align: left;
+        }
+
+        th {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <h1>HDK6NX Órarend JSON</h1>
+
+    <div class="toolbar">
+        <input type="file" id="fileInput" accept=".json">
+        <button id="btnLoadLS">LocalStorage betöltése</button>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Tárgy</th>
+            <th>Nap</th>
+            <th>Től</th>
+            <th>Ig</th>
+            <th>Helyszín</th>
+            <th>Oktató</th>
+            <th>Szak</th>
+        </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const STORAGE_KEY = "orarendHDK6NX";
+    let timetableData = [];
+
+    const fileInput = document.getElementById("fileInput");
+    const btnLoadLS = document.getElementById("btnLoadLS");
+    const tableBody = document.getElementById("tableBody");
+
+    fileInput.addEventListener("change", function () {
+        const file = this.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            try {
+                const json = JSON.parse(e.target.result);
+                if (!Array.isArray(json)) {
+                    alert("A JSON gyökere egy tömb legyen!");
+                    return;
+                }
+                timetableData = json;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(timetableData));
+                renderTable();
+            } catch (err) {
+                alert("Hibás JSON fájl: " + err.message);
+            }
+        };
+        reader.readAsText(file, "utf-8");
+    });
+
+    btnLoadLS.addEventListener("click", function () {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (!stored) {
+            alert("Nincs adat a LocalStorage-ben.");
+            return;
+        }
+        try {
+            timetableData = JSON.parse(stored);
+            renderTable();
+        } catch (err) {
+            alert("A LocalStorage-ben lévő adat sérült: " + err.message);
+        }
+    });
+
+    function renderTable() {
+        tableBody.innerHTML = "";
+
+        timetableData.forEach(function (item) {
+            const tr = document.createElement("tr");
+
+            const nap = item.idopont && item.idopont.nap ? item.idopont.nap : "";
+            const tol = item.idopont && item.idopont.tol ? item.idopont.tol : "";
+            const ig  = item.idopont && item.idopont.ig  ? item.idopont.ig  : "";
+
+            addCell(tr, item.targy);
+            addCell(tr, nap);
+            addCell(tr, tol);
+            addCell(tr, ig);
+            addCell(tr, item.helyszin);
+            addCell(tr, item.oktato);
+            addCell(tr, item.szak);
+
+            tableBody.appendChild(tr);
+        });
+    }
+
+    function addCell(tr, value) {
+        const td = document.createElement("td");
+        td.textContent = value || "";
+        tr.appendChild(td);
+    }
+
+    window.addEventListener("DOMContentLoaded", function () {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+            try {
+                timetableData = JSON.parse(stored);
+                renderTable();
+            } catch { }
+        }
+    });
+</script>
+
+</body>
+</html>

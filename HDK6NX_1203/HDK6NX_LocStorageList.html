@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Órarend JSON</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .wrapper {
+            width: 700px;
+            margin: 20px auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        .toolbar {
+            margin-bottom: 10px;
+        }
+
+        .toolbar input[type="file"] {
+            margin-right: 10px;
+        }
+
+        .search-row {
+            margin: 10px 0;
+        }
+
+        .search-row input[type="text"] {
+            width: 250px;
+        }
+
+        #listContainer {
+            border: 1px solid #ccc;
+            height: 220px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .lesson {
+            border-left: 5px solid #337ab7;
+            padding-left: 8px;
+            margin-bottom: 10px;
+        }
+
+        .lesson-title {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .lesson p {
+            margin: 2px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <h1>HDK6NX Órarend JSON</h1>
+
+    <div class="toolbar">
+        <input type="file" id="fileInput" accept=".json">
+        <button id="btnLoadLS">LocalStorage betöltése</button>
+    </div>
+
+    <div class="search-row">
+        <label for="searchInput">Keresés tárgy szerint: </label>
+        <input type="text" id="searchInput" placeholder="Webes adatkezelo kornyezetek">
+    </div>
+
+    <div id="listContainer">
+    </div>
+</div>
+
+<script>
+    // LocalStorage kulcs
+    const STORAGE_KEY = "orarendHDK6NX";
+    let timetableData = [];
+
+    const fileInput = document.getElementById("fileInput");
+    const btnLoadLS = document.getElementById("btnLoadLS");
+    const searchInput = document.getElementById("searchInput");
+    const listContainer = document.getElementById("listContainer");
+
+    fileInput.addEventListener("change", function () {
+        const file = this.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            try {
+                const json = JSON.parse(e.target.result);
+
+                if (!Array.isArray(json)) {
+                    alert("A JSON gyökere egy tömb legyen!");
+                    return;
+                }
+
+                timetableData = json;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(timetableData));
+                renderList();
+            } catch (err) {
+                alert("Hibás JSON fájl: " + err.message);
+            }
+        };
+        reader.readAsText(file, "utf-8");
+    });
+
+    btnLoadLS.addEventListener("click", function () {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (!stored) {
+            alert("Nincs adat a LocalStorage-ben.");
+            return;
+        }
+        try {
+            timetableData = JSON.parse(stored);
+            renderList();
+        } catch (err) {
+            alert("A LocalStorage-ben lévő adat sérült: " + err.message);
+        }
+    });
+
+    searchInput.addEventListener("input", renderList);
+
+    function renderList() {
+        listContainer.innerHTML = "";
+
+        const filterText = searchInput.value.trim().toLowerCase();
+
+        const filtered = timetableData.filter(function (item) {
+            if (!filterText) return true;
+            const subject = (item.targy || "").toLowerCase();
+            return subject.includes(filterText);
+        });
+
+        filtered.forEach(function (item) {
+            const div = document.createElement("div");
+            div.className = "lesson";
+
+            const nap = item.idopont && item.idopont.nap ? item.idopont.nap : "";
+            const tol = item.idopont && item.idopont.tol ? item.idopont.tol : "";
+            const ig  = item.idopont && item.idopont.ig  ? item.idopont.ig  : "";
+
+            const title = document.createElement("div");
+            title.className = "lesson-title";
+            title.textContent = item.targy || "";
+
+            const pNap = document.createElement("p");
+            pNap.textContent = "Nap: " + nap;
+
+            const pIdo = document.createElement("p");
+            pIdo.textContent = "Idő: " + tol + " - " + ig;
+
+            const pHely = document.createElement("p");
+            pHely.textContent = "Helyszín: " + (item.helyszin || "");
+
+            const pOkt = document.createElement("p");
+            pOkt.textContent = "Oktató: " + (item.oktato || "");
+
+            const pSzak = document.createElement("p");
+            pSzak.textContent = "Szak: " + (item.szak || "");
+
+            div.appendChild(title);
+            div.appendChild(pNap);
+            div.appendChild(pIdo);
+            div.appendChild(pHely);
+            div.appendChild(pOkt);
+            div.appendChild(pSzak);
+
+            listContainer.appendChild(div);
+        });
+    }
+
+    window.addEventListener("DOMContentLoaded", function () {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+            try {
+                timetableData = JSON.parse(stored);
+                renderList();
+            } catch { }
+        }
+    });
+</script>
+
+</body>
+</html>
